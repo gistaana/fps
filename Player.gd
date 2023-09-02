@@ -17,6 +17,10 @@ const FOVMULTI = 1.5
 @onready var camera := $Head/Camera3D
 @onready var melee_anim = $AnimationPlayer
 @onready var hitbox = $Head/Camera3D/Hitbox
+@onready var gun_barrel = $Head/Camera3D/Weapon2/RayCast3D
+
+var bullet = load("res://bullet.tscn")
+var instance
 
 func _ready():    # gets rid of cursor to allow camera to move via mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -32,6 +36,7 @@ func melee():
 		if not melee_anim.is_playing():
 			melee_anim.play("attack")
 			melee_anim.queue("return")
+		
 
 func _physics_process(delta):
 	
@@ -73,5 +78,7 @@ func _physics_process(delta):
 	camera.fov = lerp(camera.fov, fov, delta * 8.0)
 	
 	# TESTING
+	
+	if Input.is_action_pressed("fire"):
 	
 	move_and_slide()
