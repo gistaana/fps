@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 var speed
+var dmg = 50
 const WALK = 5.0
 const SPRINT = 8.0
 const JUMP_VELOCITY = 4.5
@@ -14,6 +15,8 @@ const FOVMULTI = 1.5
 
 @onready var head := $Head # connects to the node which is a child to characterbody3d
 @onready var camera := $Head/Camera3D
+@onready var melee_anim = $AnimationPlayer
+@onready var hitbox = $Head/Camera3D/Hitbox
 
 func _ready():    # gets rid of cursor to allow camera to move via mouse
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -24,8 +27,15 @@ func _unhandled_input(event):
 		camera.rotate_x(-event.relative.y * MOUSESPEED)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60)) # limits rotation of camera
 
+func melee():
+	if Input.is_action_just_pressed("light"):
+		if not melee_anim.is_playing():
+			melee_anim.play("attack")
+			melee_anim.queue("return")
 
 func _physics_process(delta):
+	
+	melee()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
