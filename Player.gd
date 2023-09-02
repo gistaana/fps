@@ -39,6 +39,9 @@ func _physics_process(delta):
 		speed = SPRINT
 	else:
 		speed = WALK
+		
+	if Input.is_action_just_pressed("quit"):  # added a quit button
+		get_tree().quit()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
