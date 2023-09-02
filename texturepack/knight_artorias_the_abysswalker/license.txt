@@ -1,0 +1,11 @@
+Model Information:
+* title:	Knight Artorias The Abysswalker
+* source:	https://sketchfab.com/3d-models/knight-artorias-the-abysswalker-386a1ccd726e479c8fff91235b951bab
+* author:	Joseph Lefebvre (https://sketchfab.com/long4gottenson)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Knight Artorias The Abysswalker" (https://sketchfab.com/3d-models/knight-artorias-the-abysswalker-386a1ccd726e479c8fff91235b951bab) by Joseph Lefebvre (https://sketchfab.com/long4gottenson) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
